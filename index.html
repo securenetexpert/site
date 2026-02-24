@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexum Security | Segurança Digital e Análise Web</title>
+    <meta name="description" content="Nexum Security - Análise de Segurança Web e Proteção Digital para pequenas e médias empresas.">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        header {
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #22c55e;
+        }
+
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 14px 30px;
+            background: #22c55e;
+            color: #0f172a;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        input, textarea {
+            padding: 12px;
+            border-radius: 6px;
+            border: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            font-size: 14px;
+            color: #94a3b8;
+        }
+    </style>
+
+    <script>
+        function enviarWhatsApp(event) {
+            event.preventDefault();
+            var nome = document.getElementById("nome").value;
+            var empresa = document.getElementById("empresa").value;
+            var mensagem = document.getElementById("mensagem").value;
+
+            var texto = "Olá, meu nome é " + nome + "%0A" +
+                        "Empresa: " + empresa + "%0A" +
+                        "Mensagem: " + mensagem;
+
+            var telefone = "5511999999999"; // ALTERAR PARA SEU NÚMERO
+            var url = "https://wa.me/" + telefone + "?text=" + texto;
+
+            window.open(url, "_blank");
+        }
+    </script>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+    <h1>Nexum Security</h1>
+    <p>Segurança Digital e Análise de Segurança Web</p>
+</header>
+
+<section class="hero">
+    <h2>Proteja seu negócio antes que ele vire um problema</h2>
+    <p>Pequenas e médias empresas também são alvo de ataques. Identificamos vulnerabilidades no seu site e ajudamos a fortalecer sua presença digital.</p>
+    <a href="#contato" class="btn">Solicitar Análise</a>
+</section>
+
+<section class="section">
+    <h2>O Problema</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Vazamento de Dados</h3>
+            <p>Informações expostas podem gerar prejuízos financeiros e danos à reputação.</p>
+        </div>
+        <div class="card">
+            <h3>Sites Invadidos</h3>
+            <p>Falhas simples podem permitir acesso indevido ao seu sistema.</p>
+        </div>
+        <div class="card">
+            <h3>Multas e Responsabilidade</h3>
+            <p>Negligência com segurança pode trazer riscos legais.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Nossos Serviços</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Análise de Segurança Web</h3>
+            <p>Identificação de vulnerabilidades e testes controlados de segurança.</p>
+        </div>
+        <div class="card">
+            <h3>Relatório Técnico e Executivo</h3>
+            <p>Explicamos os riscos de forma clara e orientamos as correções.</p>
+        </div>
+        <div class="card">
+            <h3>Proteção Digital</h3>
+            <p>Consultoria para reduzir exposição e fortalecer sua infraestrutura.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="contato">
+    <h2>Solicitar Análise</h2>
+    <form onsubmit="enviarWhatsApp(event)">
+        <input type="text" id="nome" placeholder="Seu nome" required>
+        <input type="text" id="empresa" placeholder="Nome da empresa" required>
+        <textarea id="mensagem" rows="4" placeholder="Descreva brevemente sua necessidade"></textarea>
+        <button type="submit" class="btn">Falar no WhatsApp</button>
+    </form>
+</section>
+
+<footer>
+    © 2026 Nexum Security. Todos os direitos reservados.
+</footer>
+
+</div>
+
+</body>
+</html>
